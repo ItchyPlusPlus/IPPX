@@ -1,4 +1,4 @@
-objects = main.o
+objects = main.o static.o
 headers = 
 binary = ippx
 
