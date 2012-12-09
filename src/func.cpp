@@ -13,11 +13,11 @@ namespace func { //NS: ippx:stat
 
 /// @brief prints the arg.
 ///
-/// @details A test block that prints to stdout
+/// @details A test block that prints to stdout and adds a std::endl
 ///
 /// @param [in] s the string to print
 static void say(std::string* s) {
-	std::cout << *s;
+	std::cout << *s << std::endl;
 }
 
 };

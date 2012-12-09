@@ -3,14 +3,19 @@
 
 using namespace std;
 
+typedef void (*func)(string*);
 
 int main(){
 	cout << "Hello world IPPX!" << endl;
 
-	std::string* arg1;
-	arg1 = new std::string("Hello World");
+	string* arg1;
+	arg1 = new string("Hello World");
 	cout << &arg1 << endl;
-	cout << &ippx::func::say << endl;
+
+	func f = NULL;
+	f = &ippx::func::say;
+	(*f)(arg1);
+	cout << &f << endl;
 	ippx::func::say(arg1);
 }
 
