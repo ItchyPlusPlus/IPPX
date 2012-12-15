@@ -1,5 +1,7 @@
 #include <iostream>;
 
+#include "func.h";
+
 
 /// \namespace ippx
 /// @brief The main namespace for IPPX.
@@ -17,8 +19,8 @@ namespace func { //NS: ippx:stat
 *
 * @param [in] s the string to print
 */
-static void say(std::string* s) {
-	std::cout << *s << std::endl;
+void say(ippx::arg* s) {
+	std::cout << *s->s << std::endl;
 }
 
 /** @breif prints the arg
@@ -27,8 +29,12 @@ static void say(std::string* s) {
  *
  * @param [in] s the string to print
  */
-static void shout(std::string* s) {
-	std::cout << "SHOUT!" << *s << std::endl;
+void shout(ippx::arg* s) {
+	std::cout << "SHOUT!" << *s->s << std::endl;
+}
+
+void sayboth(ippx::arg* s, ippx::arg* j) {
+	std::cout << "SAYBOTH!" << *s->s << *j->s;
 }
 
 };

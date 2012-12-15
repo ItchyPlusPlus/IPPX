@@ -1,17 +1,21 @@
 #include <iostream>
-#include "func.cpp"
+#include "func.h"
 
 using namespace std;
 
-typedef void (*func)(string*);
+typedef void (*func)(ippx::arg*);
 
 int main(){
 	cout << "Hello world IPPX!" << endl;
 
-	string* arg1;
-	arg1 = new string("Hello World");
-	cout << &arg1 << endl;
+	string* s1;
+	s1 = new string("Hello World");
+	cout << &s1 << endl;
 
+	ippx::arg* arg1 = new ippx::arg;
+
+	arg1->s = s1;
+	cout << "hello world!" << endl;
 	//int ints[100000];
 
 	func scriptone[50];
@@ -21,6 +25,7 @@ int main(){
 	(*f)(arg1);
 	cout << &f << endl;
 	ippx::func::say(arg1);
+
 
 	scriptone[1] = &ippx::func::say;
 	scriptone[2] = &ippx::func::shout;

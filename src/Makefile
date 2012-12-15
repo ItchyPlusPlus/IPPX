@@ -1,9 +1,9 @@
-objects = main.o static.o
-headers = 
+objects = func.o main.o
+headers = func.h
 binary = ippx
 
 $(binary): $(objects) 
-	g++ -o $@ $(objects) `pkg-config --cflags --libs cairo` `sdl-config --cflags --libs`
+	g++ -o $@ $(objects)
 
 $(objects): $(headers)
 
