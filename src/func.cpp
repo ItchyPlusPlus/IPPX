@@ -1,4 +1,4 @@
-#include "iostream";
+#include <iostream>;
 
 
 /// \namespace ippx
@@ -11,13 +11,24 @@ namespace ippx {
 /// @details This namespace contains all of the static functions, called when a block is executed.
 namespace func { //NS: ippx:stat
 
-/// @brief prints the arg.
-///
-/// @details A test block that prints to stdout and adds a std::endl
-///
-/// @param [in] s the string to print
+/** @brief prints the arg.
+*
+* @details A test block that prints to stdout and adds a std::endl
+*
+* @param [in] s the string to print
+*/
 static void say(std::string* s) {
 	std::cout << *s << std::endl;
+}
+
+/** @breif prints the arg
+ *
+ * @details A test block that prints "SHOUT!" to stdout and adds a std::endl
+ *
+ * @param [in] s the string to print
+ */
+static void shout(std::string* s) {
+	std::cout << "SHOUT!" << *s << std::endl;
 }
 
 };
