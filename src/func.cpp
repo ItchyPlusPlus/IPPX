@@ -19,8 +19,9 @@ namespace func { //NS: ippx:stat
 *
 * @param [in] s the string to print
 */
-void say(ippx::arg* s) {
+ippx::arg* say(ippx::arg* s) {
 	std::cout << *s->s << std::endl;
+	return NULL;
 }
 
 /** @breif prints the arg
@@ -29,12 +30,22 @@ void say(ippx::arg* s) {
  *
  * @param [in] s the string to print
  */
-void shout(ippx::arg* s) {
+ippx::arg* shout(ippx::arg* s) {
 	std::cout << "SHOUT!" << *s->s << std::endl;
+	return NULL;
 }
 
-void sayboth(ippx::arg* s, ippx::arg* j) {
+ippx::arg* sayboth(ippx::arg* s, ippx::arg* j) {
 	std::cout << "SAYBOTH!" << *s->s << *j->s;
+	return NULL;
+}
+
+ippx::arg* ask(ippx::arg* a) {
+std::cout << *a->s << std::endl;
+ippx::arg* inpt = new ippx::arg;
+inpt->s = new std::string();
+std::cin >> *inpt->s;
+return inpt;
 }
 
 };

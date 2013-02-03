@@ -7,18 +7,20 @@ namespace ippx {
 union arg{
 	std::string* s;
 	int* i;
+	arg* a[];
 };
 
 namespace func { //NS: ippx:stat
 
 
-void say(ippx::arg*);
+ippx::arg* say(ippx::arg*);
 
 
-void shout(ippx::arg*);
+ippx::arg* shout(ippx::arg*);
 
-void sayboth(ippx::arg*, ippx::arg*);
+ippx::arg* sayboth(ippx::arg*, ippx::arg*);
 
+ippx::arg* ask(ippx::arg*);
 };
 
 };
